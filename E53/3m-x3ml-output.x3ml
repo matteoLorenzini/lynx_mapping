@@ -64,6 +64,15 @@
                   <instance_generator name="lynx_place">
                      <arg name="place_id" type="xpath">place_id/text()</arg>
                   </instance_generator>
+                  <additional>
+                     <relationship>crm:P2_has_type</relationship>
+                     <entity>
+                        <type>crm:E55_Type</type>
+                        <instance_generator name="UriWithType">
+                           <arg name="type" type="constant">place</arg>
+                        </instance_generator>
+                     </entity>
+                  </additional>
                </entity>
             </target_node>
          </domain>
@@ -106,9 +115,12 @@
                <target_node>
                   <entity>
                      <type>rdfs:Literal</type>
-                     <instance_generator name="Literal">
-                        <arg name="text" type="xpath">text()</arg>
+                     <instance_generator name="coordinates">
+                        <arg name="coordinates" type="xpath">text()</arg>
                      </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </label_generator>
                   </entity>
                </target_node>
             </range>
@@ -148,12 +160,21 @@
                         <relationship>crm:P168_place_is_defined_by</relationship>
                         <entity>
                            <type>rdfs:Literal</type>
-                           <instance_generator name="Literal">
-                              <arg name="text" type="xpath">../site_coordinates/text()</arg>
+                           <instance_generator name="coordinates">
+                              <arg name="coordinates" type="xpath">../site_coordinates/text()</arg>
                            </instance_generator>
                            <label_generator name="Literal">
-                              <arg name="text" type="xpath">text()</arg>
+                              <arg name="text" type="xpath">../site_coordinates/text()</arg>
                            </label_generator>
+                        </entity>
+                     </additional>
+                     <additional>
+                        <relationship>crm:P2_has_type</relationship>
+                        <entity>
+                           <type>crm:E55_Type</type>
+                           <instance_generator name="UriWithType">
+                              <arg name="type" type="constant">site</arg>
+                           </instance_generator>
                         </entity>
                      </additional>
                   </entity>

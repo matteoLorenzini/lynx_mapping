@@ -125,10 +125,13 @@
                <target_node>
                   <entity>
                      <type>base:E42_Identifier</type>
-                     <instance_generator name="object_id">
-                        <arg name="unique_id" type="xpath">../Unique_ID/text()</arg>
+                     <instance_generator name="ID_lynx">
+                        <arg name="Unique_ID" type="xpath">text()</arg>
                         <arg name="id" type="xpath">text()</arg>
                      </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </label_generator>
                      <additional>
                         <relationship>base:P2_has_type</relationship>
                         <entity>
@@ -194,6 +197,9 @@
                         <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="id" type="xpath">text()</arg>
                      </instance_generator>
+                     <label_generator name="Literal">
+                        <arg name="text" type="xpath">text()</arg>
+                     </label_generator>
                      <additional>
                         <relationship>base:P2_has_type</relationship>
                         <entity>
@@ -229,6 +235,15 @@
                         <arg name="text" type="xpath">text()</arg>
                         <arg name="language" type="constant">it </arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">classification</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -276,9 +291,18 @@
                         <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
-                     <label_generator name="prefLabel">
+                     <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">manifacturing-marks</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -290,31 +314,29 @@
                </source_relation>
                <target_relation>
                   <relationship>base:P56_bears_feature</relationship>
-                  <entity>
-                     <type>base:E25_Man-Made_Feature</type>
-                     <instance_generator name="lynx_technical_features">
-                        <arg name="Unique_ID" type="xpath">../../Unique_ID/text()</arg>
-                        <arg name="text" type="xpath">text()</arg>
-                     </instance_generator>
-                     <label_generator name="prefLabel">
-                        <arg name="text" type="xpath">text()</arg>
-                     </label_generator>
-                  </entity>
-                  <relationship>base:P2_has_type</relationship>
                </target_relation>
             </path>
             <range>
                <source_node>Technical_diagnostic_features/value</source_node>
                <target_node>
                   <entity>
-                     <type>base:E55_Type</type>
-                     <instance_generator name="lynx_technical_feature_type">
+                     <type>base:E25_Man-Made_Feature</type>
+                     <instance_generator name="lynx_technical_features">
                         <arg name="Unique_ID" type="xpath">../../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
-                     <label_generator name="prefLabel">
+                     <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">technical-diagnostic-feature</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -531,11 +553,20 @@
                   <entity>
                      <type>base:E53_Place</type>
                      <instance_generator name="lynx_site">
-                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
+                        <arg name="site_id" type="xpath">../Unique_ID/text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">provenance</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -566,6 +597,15 @@
                      <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">date_of_discovery</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -665,43 +705,39 @@
          <link>
             <path>
                <source_relation>
-                  <relation>Description</relation>
-               </source_relation>
-               <target_relation>
-                  <relationship>base:P3_has_note</relationship>
-               </target_relation>
-            </path>
-            <range>
-               <source_node>Description</source_node>
-               <target_node>
-                  <entity>
-                     <type>rdfs:Literal</type>
-                     <instance_generator name="UUID"/>
-                     <label_generator name="Literal">
-                        <arg name="text" type="xpath">text()</arg>
-                     </label_generator>
-                  </entity>
-               </target_node>
-            </range>
-         </link>
-         <link>
-            <path>
-               <source_relation>
                   <relation>Stylistic_notes</relation>
                </source_relation>
                <target_relation>
-                  <relationship>base:P3_has_note</relationship>
+                  <if>
+                     <exists>text()</exists>
+                  </if>
+                  <relationship>base:P67i_is_referred_to_by</relationship>
                </target_relation>
             </path>
             <range>
                <source_node>Stylistic_notes</source_node>
                <target_node>
+                  <if>
+                     <exists>text()</exists>
+                  </if>
                   <entity>
-                     <type>rdfs:Literal</type>
-                     <instance_generator name="UUID"/>
+                     <type>base:E33_Linguistic_Object</type>
+                     <instance_generator name="lynx-notes">
+                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
+                        <arg name="project_id" type="xpath">../Project_ID/text()</arg>
+                     </instance_generator>
                      <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">stylistic-notes</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -727,6 +763,15 @@
                      <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">status</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>
@@ -779,13 +824,89 @@
                <source_node>Place_of_discovery</source_node>
                <target_node>
                   <entity>
-                     <type>base:E27_Site</type>
-                     <instance_generator name="lynx_site">
-                        <arg name="Unique_ID" type="xpath">../site_ID/text()</arg>
+                     <type>base:E53_Place</type>
+                     <instance_generator name="lynx_place">
+                        <arg name="place_id" type="xpath">text()</arg>
                      </instance_generator>
-                     <label_generator name="prefLabel">
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">place-of-discovery</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>Description</relation>
+               </source_relation>
+               <target_relation>
+                  <if>
+                     <exists>text()</exists>
+                  </if>
+                  <relationship>base:P67i_is_referred_to_by</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>Description</source_node>
+               <target_node>
+                  <if>
+                     <exists>text()</exists>
+                  </if>
+                  <entity>
+                     <type>base:E33_Linguistic_Object</type>
+                     <instance_generator name="lynx-description">
+                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
+                        <arg name="project_id" type="xpath">../Project_ID/text()</arg>
+                     </instance_generator>
+                     <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">description-notes</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
+                  </entity>
+               </target_node>
+            </range>
+         </link>
+         <link>
+            <path>
+               <source_relation>
+                  <relation>Site_of_discovery</relation>
+               </source_relation>
+               <target_relation>
+                  <relationship>base:P53_has_former_or_current_location</relationship>
+               </target_relation>
+            </path>
+            <range>
+               <source_node>Site_of_discovery</source_node>
+               <target_node>
+                  <entity>
+                     <type>base:E53_Place</type>
+                     <instance_generator name="lynx_site">
+                        <arg name="site_id" type="xpath">text()</arg>
+                     </instance_generator>
+                     <additional>
+                        <relationship>base:P2_has_type</relationship>
+                        <entity>
+                           <type>base:E55_Type</type>
+                           <instance_generator name="URIwithType">
+                              <arg name="type" type="constant">site-of-discovery</arg>
+                           </instance_generator>
+                        </entity>
+                     </additional>
                   </entity>
                </target_node>
             </range>

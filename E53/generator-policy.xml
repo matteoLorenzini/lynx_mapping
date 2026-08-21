@@ -73,4 +73,10 @@
    <generator name="lynx_place_name" prefix="lynx" type="any">
       <pattern>cultural-heritage-place/{place_id}/{place_name}</pattern>
    </generator>
+   <generator name="UriWithType" prefix="lynx" type="any">
+      <pattern>cultural-heritage-place/{type}</pattern>
+   </generator>
+   <generator name="coordinates" prefix="lynx" type="any">
+      <pattern>{coordinates}</pattern>
+   </generator>
 </generator_policy>

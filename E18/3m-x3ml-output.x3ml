@@ -263,7 +263,6 @@
                   <entity>
                      <type>base:E57_Material</type>
                      <instance_generator name="lynx_mterial">
-                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="material" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -288,7 +287,6 @@
                   <entity>
                      <type>base:E25_Man-Made_Feature</type>
                      <instance_generator name="lynx_manifacturing_marks">
-                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -322,7 +320,6 @@
                   <entity>
                      <type>base:E25_Man-Made_Feature</type>
                      <instance_generator name="lynx_technical_features">
-                        <arg name="Unique_ID" type="xpath">../../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -528,7 +525,6 @@
                   <entity>
                      <type>base:E3_Condition_State</type>
                      <instance_generator name="lynx_state_of_preservation">
-                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -553,7 +549,7 @@
                   <entity>
                      <type>base:E53_Place</type>
                      <instance_generator name="lynx_site">
-                        <arg name="site_id" type="xpath">../Unique_ID/text()</arg>
+                        <arg name="site_id" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
@@ -757,7 +753,6 @@
                   <entity>
                      <type>base:E55_Type</type>
                      <instance_generator name="lynx-status">
-                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="status" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">

@@ -94,7 +94,7 @@
                         <arg name="place_id" type="xpath">../place_id/text()</arg>
                         <arg name="place_name" type="xpath">text()</arg>
                      </instance_generator>
-                     <label_generator name="prefLabel">
+                     <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
                   </entity>

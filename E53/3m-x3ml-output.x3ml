@@ -18,22 +18,12 @@
          <target_info>
             <target_schema schema_file="CRMgeo_v1.2.rdfs" type="rdfs" version="">CRMgeo_v1.2</target_schema>
             <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
-               <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
-               <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
                <namespace prefix="geo" uri="http://www.ics.forth.gr/isl/CRMgeo/"/>
-               <namespace prefix="lynx" uri="http://www.lynx.com/resource/"/>
-            </namespaces>
-         </target_info>
-         <target_info>
-            <target_schema schema_file="CIDOC_CRM_v7.1.3.rdf" type="rdf" version="">CIDOC_CRM_v7.1.3</target_schema>
-            <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
                <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
                <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-               <namespace prefix="crm" uri="http://www.cidoc-crm.org/cidoc-crm/"/>
+               <namespace prefix="lynx" uri="http://www.lynx.com/resource/"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
             </namespaces>
          </target_info>
       </target>
@@ -94,7 +84,7 @@
                         <arg name="place_id" type="xpath">../place_id/text()</arg>
                         <arg name="place_name" type="xpath">text()</arg>
                      </instance_generator>
-                     <label_generator name="Literal">
+                     <label_generator name="prefLabel">
                         <arg name="text" type="xpath">text()</arg>
                      </label_generator>
                   </entity>

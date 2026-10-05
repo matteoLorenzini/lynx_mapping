@@ -22,52 +22,52 @@
                            type="rdfs"
                            version="">cidoc_crm_v6.2.1-2018April</target_schema>
             <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
                <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
                <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-               <namespace prefix="base" uri="http://www.cidoc-crm.org/cidoc-crm/"/>
                <namespace prefix="lynx" uri="http://www.lynx.com/resource/"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+               <namespace prefix="base" uri="http://www.cidoc-crm.org/cidoc-crm/"/>
             </namespaces>
          </target_info>
          <target_info>
             <target_schema schema_file="CRMarchaeo_v1.2.1.rdfs" type="rdfs" version="">CRMarchaeo_v1.2.1</target_schema>
             <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
                <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
                <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
                <namespace prefix="archeo" uri="http://www.ics.forth.gr/isl/CRMarchaeo/"/>
             </namespaces>
          </target_info>
          <target_info>
             <target_schema schema_file="CRMdig_v3.2.rdfs" type="rdfs" version="">CRMdig_v3.2</target_schema>
             <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+               <namespace prefix="dig" uri="http://www.ics.forth.gr/isl/CRMdig/"/>
                <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
                <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-               <namespace prefix="dig" uri="http://www.ics.forth.gr/isl/CRMdig/"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
             </namespaces>
          </target_info>
          <target_info>
             <target_schema schema_file="CRMsci_v1.2.2.rdfs" type="rdfs" version="">CRMsci_v1.2.2</target_schema>
             <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
                <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
                <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
                <namespace prefix="sci" uri="http://www.ics.forth.gr/isl/CRMsci/"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
             </namespaces>
          </target_info>
          <target_info>
             <target_schema schema_file="LRMoo_v1.1.1.rdf" type="rdf" version="">LRMoo_v1.1.1</target_schema>
             <namespaces>
-               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
-               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
+               <namespace prefix="lrmoo" uri="http://iflastandards.info/ns/lrm/lrmoo/"/>
                <namespace prefix="rdf" uri="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
                <namespace prefix="owl" uri="http://www.w3.org/2002/07/owl#"/>
-               <namespace prefix="lrmoo" uri="http://iflastandards.info/ns/lrm/lrmoo/"/>
+               <namespace prefix="xsd" uri="http://www.w3.org/2001/XMLSchema#"/>
+               <namespace prefix="rdfs" uri="http://www.w3.org/2000/01/rdf-schema#"/>
             </namespaces>
          </target_info>
       </target>
@@ -263,6 +263,7 @@
                   <entity>
                      <type>base:E57_Material</type>
                      <instance_generator name="lynx_mterial">
+                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="material" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -287,6 +288,7 @@
                   <entity>
                      <type>base:E25_Man-Made_Feature</type>
                      <instance_generator name="lynx_manifacturing_marks">
+                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -320,6 +322,7 @@
                   <entity>
                      <type>base:E25_Man-Made_Feature</type>
                      <instance_generator name="lynx_technical_features">
+                        <arg name="Unique_ID" type="xpath">../../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -525,6 +528,7 @@
                   <entity>
                      <type>base:E3_Condition_State</type>
                      <instance_generator name="lynx_state_of_preservation">
+                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="text" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
@@ -549,7 +553,7 @@
                   <entity>
                      <type>base:E53_Place</type>
                      <instance_generator name="lynx_site">
-                        <arg name="site_id" type="xpath">text()</arg>
+                        <arg name="site_id" type="xpath">../Unique_ID/text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">
                         <arg name="text" type="xpath">text()</arg>
@@ -753,6 +757,7 @@
                   <entity>
                      <type>base:E55_Type</type>
                      <instance_generator name="lynx-status">
+                        <arg name="Unique_ID" type="xpath">../Unique_ID/text()</arg>
                         <arg name="status" type="xpath">text()</arg>
                      </instance_generator>
                      <label_generator name="Literal">

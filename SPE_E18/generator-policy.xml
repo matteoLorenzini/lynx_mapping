@@ -85,19 +85,19 @@
       <pattern>cultural-heritage-object/{Unique_ID}/type/{type}</pattern>
    </generator>
    <generator name="lynx_mterial" prefix="lynx" type="any">
-      <pattern>cultural-heritage-object/material/{material}</pattern>
+      <pattern>cultural-heritage-object/{Unique_ID}/material/{material}</pattern>
    </generator>
    <generator name="lynx_manifacturing_marks" prefix="lynx" type="any">
-      <pattern>cultural-heritage-object/manifacturing-marks/{text}</pattern>
+      <pattern>cultural-heritage-object/{Unique_ID}/manifacturing-marks/{text}</pattern>
    </generator>
    <generator name="lynx_production" prefix="lynx" type="any">
       <pattern>cultural-heritage-object/{id}/production/{classification}</pattern>
    </generator>
    <generator name="lynx_technical_features" prefix="lynx" type="any">
-      <pattern>cultural-heritage-object/technical-feature/{text}</pattern>
+      <pattern>cultural-heritage-object/{Unique_ID}/technical-feature/{text}</pattern>
    </generator>
    <generator name="lynx_technical_feature_type" prefix="lynx" type="any">
-      <pattern>cultural-heritage-object/technical-feature-type/{text}</pattern>
+      <pattern>cultural-heritage-object/{Unique_ID}/technical-feature-type/{text}</pattern>
    </generator>
    <generator name="lynx_dimension_height" prefix="lynx" type="any">
       <pattern>cultural-heritage-object/{Unique_ID}/dimension/height/{text}</pattern>
@@ -112,7 +112,7 @@
       <pattern>cultural-heritage-object/{Unique_ID}/dimension/diameter/{text}</pattern>
    </generator>
    <generator name="lynx_state_of_preservation" prefix="lynx" type="any">
-      <pattern>cultural-heritage-object/state-of-preservation/{text}</pattern>
+      <pattern>cultural-heritage-object/{Unique_ID}/state-of-preservation/{text}</pattern>
    </generator>
    <generator name="lynx_site" prefix="lynx" type="any">
       <pattern>cultural-heritage-site/{site_id}</pattern>
@@ -133,7 +133,7 @@
       <pattern>cultural-heritage-object/{Unique_ID}/bibliography</pattern>
    </generator>
    <generator name="lynx-status" prefix="lynx" type="any">
-      <pattern>cultural-heritage-object/status/{status}</pattern>
+      <pattern>cultural-heritage-object/{Unique_ID}/status/{status}</pattern>
    </generator>
    <generator name="lynx-production" prefix="lynx" type="any">
       <pattern>cultural-heritage-object/{Unique_ID}/production</pattern>

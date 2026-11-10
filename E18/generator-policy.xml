@@ -115,7 +115,7 @@
       <pattern>cultural-heritage-object/{Unique_ID}/state-of-preservation/{text}</pattern>
    </generator>
    <generator name="lynx_site" prefix="lynx" type="any">
-      <pattern>cultural-heritage-site/{site_id}</pattern>
+      <pattern>site/{site_id}</pattern>
    </generator>
    <generator name="lynx_discovery_activity" prefix="lynx" type="any">
       <pattern>cultural-heritage-object/{Unique_ID}/date-discovery/{text}</pattern>
@@ -154,6 +154,6 @@
       <pattern>cultural-heritage-object/{Unique_ID}/stylistic-notes/{project_id}</pattern>
    </generator>
    <generator name="lynx_place" prefix="lynx" type="any">
-      <pattern>cultural-heritage-place/{place_id}</pattern>
+      <pattern>place/{place_id}</pattern>
    </generator>
 </generator_policy>

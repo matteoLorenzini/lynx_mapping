@@ -62,19 +62,19 @@
       <pattern>{side}/{type}/{id}</pattern>
    </generator>
    <generator name="lynx_site" prefix="lynx" type="any">
-      <pattern>cultural-heritage-site/{site_id}</pattern>
+      <pattern>site/{site_id}</pattern>
    </generator>
    <generator name="lynx_place" prefix="lynx" type="any">
-      <pattern>cultural-heritage-place/{place_id}</pattern>
+      <pattern>place/{place_id}</pattern>
    </generator>
    <generator name="lynx_site_name" prefix="lynx" type="any">
-      <pattern>cultural-heritage-site/{place_id}/{site_id}/{site_name}</pattern>
+      <pattern>site/{place_id}/{site_id}/{site_name}</pattern>
    </generator>
    <generator name="lynx_place_name" prefix="lynx" type="any">
-      <pattern>cultural-heritage-place/{place_id}/{place_name}</pattern>
+      <pattern>place/{place_id}/{place_name}</pattern>
    </generator>
    <generator name="UriWithType" prefix="lynx" type="any">
-      <pattern>cultural-heritage-place/{type}</pattern>
+      <pattern>place/{type}</pattern>
    </generator>
    <generator name="coordinates" prefix="lynx" type="any">
       <pattern>{coordinates}</pattern>
